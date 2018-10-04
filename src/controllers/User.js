@@ -37,6 +37,13 @@ const Controller = {
 
           const newUser = new User({
             _id: mongoose.Types.ObjectId(),
+            dateRegister: request.body.dateRegister,
+            name: request.body.name,
+            lastName: request.body.lastName,
+            age: request.body.age,
+            gender: request.body.gender,
+            company: request.body.company,
+            telephone: request.body.telephone,
             email: request.body.email,
             password: hash
           });
@@ -128,6 +135,28 @@ const Controller = {
             })
         }
       });
+  },
+
+  getByEmail: (request, response) => {
+    User
+      .find(
+        {email: request.params.useremail}
+      )
+      .exec()
+      .then(user => {
+        response
+          .status(200)
+          .json({
+            user
+          });
+        })
+        .catch(error => {
+          response
+            .status(500)
+            .json({
+              error
+            })
+        });
   }
 };
 
