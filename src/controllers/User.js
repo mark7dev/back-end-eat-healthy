@@ -45,7 +45,8 @@ const Controller = {
             company: request.body.company,
             telephone: request.body.telephone,
             email: request.body.email,
-            password: hash
+            password: hash,
+            nutritionist: request.body.nutritionist
           });
 
           newUser
@@ -117,7 +118,8 @@ const Controller = {
                 .status(200)
                 .json({
                   message: 'Authentication successfull.',
-                  token
+                  token,
+                  user
                 });
             }
 
