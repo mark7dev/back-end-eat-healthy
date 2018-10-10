@@ -139,6 +139,34 @@ const Controller = {
       });
   },
 
+    // getByEmail: (request, response) => {
+    //   User
+    //   .find(
+    //     {email: request.params.useremail}
+    //   )
+    //   .exec()
+    //   .then(user => {
+    //     if (error) {
+    //       return response
+    //       .status(200)
+    //       .json({
+    //         user
+    //       });
+    //         // .status(401)
+    //         // .json({
+    //         //   message: 'Search failed.'
+    //         // })
+    //     } else {
+    //       response
+    //       .status(404)
+    //       .json({
+    //         xxxx
+    //       });
+    //     }
+                        
+    //   })
+    // }
+
   getByEmail: (request, response) => {
     User
       .find(
